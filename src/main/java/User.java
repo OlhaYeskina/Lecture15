@@ -1,28 +1,86 @@
-import java.util.List;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import java.io.DataInput;
+import java.io.FileReader;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.*;
 
 public class User {
 
 
-    private String name;
-    private String job;
+    public int id;
+    public String email;
+    public String first_name;
+    public String last_name;
+    public String avatar;
+
     List<User> list;
 
-
-
-    public String getName() {
-        return name;
+    public int getId() {
+        return id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getJob() {
-        return job;
+    public String getEmail() {
+        return email;
     }
 
-    public void setJob(String job) {
-        this.job = job;
+    public void setEmail(String email) {
+        this.email = email;
     }
+
+    public String getFirst_name() {
+        return first_name;
+    }
+
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
+    }
+
+    public String getLast_name() {
+        return last_name;
+    }
+
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public String createString() {
+        return "{id:" + this.getId()
+                + ",email:" + this.getEmail()
+                + ",first_name:" + this.getFirst_name()
+                + ",last_name:" + this.getLast_name()
+                + ",avatar:" + getAvatar()
+                + "}";
+
+//        return "{\"id\":\"" + this.getId()
+//                + "\",\"email\":\"" + this.getEmail()
+//                + "\",\"first_name\":\"" + this.getFirst_name()
+//                + "\",\"last_name\":\"" + this.getLast_name()
+//                + "\",\"avatar\":\"" + getAvatar()
+//                + "\"}";
+
+    }
+
 
 }
