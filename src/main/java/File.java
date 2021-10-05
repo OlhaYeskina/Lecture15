@@ -106,12 +106,7 @@ public class File {
             fileRead = objectMapper.readValue(data, File.class);
 
 
-//            ObjectMapper objectMapper2 = new ObjectMapper();
-//
-//            File fileWrite = objectMapper2.readValue((JsonParser) newList, File.class);
-//            FileWriter file = new FileWriter("c://Users/James McNulty/Documents/School/CMPT 470/Ex 4/output.json");
-//            file.flush();
-//            file.close();
+
 
         } catch (IOException | ParseException e) {
             e.printStackTrace();
@@ -122,7 +117,7 @@ public class File {
     public static void writeToJsonFileUsersWithFirstLetterFInLastname(File fileRead) {
         System.out.println();
         List<User> listUsers = fileRead.getData();
-        // List<User> newList = new LinkedList<>();
+
 
         List<User> listUsers2 = new ArrayList<>();
 
@@ -153,36 +148,13 @@ public class File {
     }
 
     private static void writeUsersFromJsonFileToExcelFile() {
-//        File fileRead = null;
-//        try {
-//            JSONParser parser = new JSONParser();
-//            //Use JSONObject for simple JSON and JSONArray for array of JSON.
-//            JSONObject json = (JSONObject) parser.parse(
-//                    new FileReader("post.json"));//path to the JSON file.
-//
-//
-//
-//            ObjectMapper objectMapper = new ObjectMapper();
-//            String data = json.toJSONString();
-//
-//            fileRead = objectMapper.readValue(data, File.class);
-//
-//
-//
-//        } catch (IOException | ParseException e) {
-//            e.printStackTrace();
-//        }
 
-
-        File fileRead = null;
         try {
 
             JSONParser parser = new JSONParser();
             //Use JSONObject for simple JSON and JSONArray for array of JSON.
             JSONArray json = (JSONArray) parser.parse(
                     new FileReader("post.json"));//path to the JSON file.
-
-            ObjectMapper objectMapper = new ObjectMapper();
             String data = json.toJSONString();
 
             System.out.println(data);

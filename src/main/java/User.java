@@ -64,23 +64,7 @@ public class User {
     public void setAvatar(String avatar) {
         this.avatar = avatar;
     }
-
-    public String createString() {
-        return "{id:" + this.getId()
-                + ",email:" + this.getEmail()
-                + ",first_name:" + this.getFirst_name()
-                + ",last_name:" + this.getLast_name()
-                + ",avatar:" + getAvatar()
-                + "}";
-
-//        return "{\"id\":\"" + this.getId()
-//                + "\",\"email\":\"" + this.getEmail()
-//                + "\",\"first_name\":\"" + this.getFirst_name()
-//                + "\",\"last_name\":\"" + this.getLast_name()
-//                + "\",\"avatar\":\"" + getAvatar()
-//                + "\"}";
-
-    }
+    
 
 
 }
